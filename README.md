@@ -17,7 +17,7 @@ Webpopo是一个包含9种常见漏洞的Web应用程序
 
 ```
 git clone https://github.com/cipopo/Webpopo.git
-cd /webpopo
+cd Webpopo
 docker-compose up -d
 ```
 
