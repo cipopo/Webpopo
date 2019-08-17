@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  web:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: 'webpopo-web'
+    restart: 'always'
+    ports:
+      - "8888:80"
+    links: 
+      - mongo
+    networks:
+      - my-bridge
+
+  mongo:
+    image: mongo
+    container_name: 'webpopo-mongo'
+    ports:
+      - "27017:27017"
+    networks:
+      - my-bridge
+
+networks:
+  my-bridge:
+    driver: bridge
